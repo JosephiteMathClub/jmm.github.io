@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Josephite Math Club</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!-- Include the Firebase JavaScript SDK -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"
+    integrity="sha512-BdHyGtczsUoFcEma+MfXc71KJLv/cd+sUsUaYYf2mXpfG/PtBjNXsPo78+rxWjscxUYN2Qr2+DbeGGiJx81ifg=="
+    crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+  <!-- Include other Firebase services you need (e.g., storage, database, etc.) -->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <!--Particles-->
+  <!--end-->
+  <div id="loading">
+    <div id="spinner"></div>
+  </div>
+
+
+  <div id="header" class="animated slideInDown" style="animation-delay:1.8s;">
+    <div id="title">
+      <img src="jmc.svg" width="90px" style="" />
+    </div>
+    <div id="links">
+      <a href="#about">About</a>
+      <a href="#events" style="margin:0px 60px;">Event</a>
+      <a href="#contact">Registration</a>
+    </div>
+  </div>
+
+  <center>
+    <div id="middle">
+      <div id="tagline" class="animated zoomIn" style="animation-delay:1.8s;">
+        <span id="text"></span>
+        <br>
+        <button href="#contact" class="btn_one">Resgister Now</button>
+      </div>
+    </div>
+  </center>
+
+  <div id="portfolio" style="align-items: center;text-align: center;">
+    <div id="about">
+      <!--test-->
+
+      <!---->
+      <h1>About</h1>
+      <div>
+        <p>
+          Josephite Math Club started its journey with an aim to spread Mathematics with a greater momentum on
+        </p>
+      </div>
+    </div>
+
+    <br>
+    <div id="events">
+      <h1>Events</h1>
+
+      <div class="cards-list">
+  
+        <div class="card 1">
+          <div class="card_image"> <img src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
+          <div class="card_title title-white">
+            <p>Event 1</p>
+          </div>
+        </div>
+        
+      
+        
+        <div class="card 3">
+          <div class="card_image">
+            <img src="https://media.giphy.com/media/10SvWCbt1ytWCc/giphy.gif" />
+          </div>
+          <div class="card_title">
+            <p>Event 2</p>
+          </div>
+        </div>
+          
+          <div class="card 4">
+          <div class="card_image">
+            <img src="https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif" />
+            </div>
+          <div class="card_title title-black">
+            <p>EVent 3</p>
+          </div>
+          </div>
+        
+        </div>
+
+     
+    </div>
+
+    <div id="contact">
+      <h1>Registration</h1>
+      <div id="reg" style="display: none;">
+        <p>You've already registered for this event</p>
+      </div>
+      <div id="classButtons">
+        <h3>Choose your category: </h3>
+        <button class="btn_class" id="primaryBtn">Primary</button>
+        <button class="btn_class" id="juniorBtn">Junior</button>
+        <button class="btn_class" id="secondaryBtn">Secondary</button>
+        <button class="btn_class" id="higherSecondaryBtn">Higher Secondary</button>
+        <button class="btn_class" id="teamEventBtn">Paid event/Team event</button>
+      </div>
+      <div id="form">
+
+
+        <input type="text" id="name" placeholder="Your Name" required><br>
+        <input type="text" id="school" placeholder="Your Institution" required><br>
+        <input type="text" id="class" placeholder="Your Class" required><br>
+        <input type="tel" id="number" placeholder="Your Phone Number" required><br>
+        <input type="email" id="email" placeholder="Your Email"><br>
+        <br>
+        <p>Events:</p><br>
+        <input type="checkbox" id="event1"><label>Event 1</label><br>
+        <input type="checkbox" id="event2"><label>Event 2</label><br>
+        <input type="checkbox" id="event3"><label>Event 3</label>
+        <br>
+        <button id="sendButton" class="btn_one" disabled>send</button>
+      </div>
+      <br>
+      <div id="details">
+        <a class="btn_social" href="tel:+8801617367584"><i class="fas fa-phone"></i></a>
+        <a class="btn_social" href="mailto:tawhidbinomar@gmail.com"><i class="fas fa-at"></i></a>
+        <a class="btn_social" href="https://www.facebook.com/2015JMC" target="_blank"><i
+            class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </div>
+  <!--Modal goes here-->
+  <div class="modal-hold">
+    <section class="modal hidden">
+      <div class="flex">
+      </div>
+      <div>
+        <h3>You are now registered!</h3>
+
+      </div>
+      <br>
+    </section>
+
+    <div class="overlay hidden"></div>
+  </div>
+  <!--Modal ends here-->
+  <div id="footer">
+    Prepared by <br><br> <a href="https://www.facebook.com/2015JMC">JMC EC PANEL</a>
+  </div>
+
+  <script src="index.js" type="text/javascript"></script>
+
+  <!-- Your application code goes here -->
+  <script>
+    // Initialize Firebase with your project configuration
+    // Scroll to the top of the page when it's loaded or refreshed
+    window.onload = function () {
+      setTimeout(function () {
+        window.scrollTo(0, 0);
+      }, 0);
+    };
+
+    var firebaseConfig = {
+      apiKey: "AIzaSyCQt_FoOFThE-tBcSjdQsax4LF2fdINdGs",
+      authDomain: "jmc-db.firebaseapp.com",
+      projectId: "jmc-db",
+      storageBucket: "jmc-db.appspot.com",
+      messagingSenderId: "970268771226",
+      appId: "1:970268771226:web:494babd356a7452284b023",
+      measurementId: "G-B7FV63SW95"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const db = firebase.firestore().collection("registration");
+
+    const modal = document.querySelector(".modal");
+    const overlay = document.querySelector(".overlay");
+
+
+    function handleClassButtonClick(event) {
+      const buttons = document.querySelectorAll(".btn_class");
+      buttons.forEach((button) => {
+        button.classList.remove("active");
+      });
+      document.getElementById("form").style.display = "block";
+      localStorage.setItem("Id", event.target.id)
+      event.target.classList.add("active");
+      const chosenClass = event.target.textContent;
+      console.log("done")
+      // Save the chosen class to localStorage
+      localStorage.setItem("chosenClass", chosenClass);
+    }
+
+    // Add event listeners to the class buttons
+    document.getElementById("primaryBtn").addEventListener("click", handleClassButtonClick);
+    document.getElementById("juniorBtn").addEventListener("click", handleClassButtonClick);
+    document.getElementById("secondaryBtn").addEventListener("click", handleClassButtonClick);
+    document.getElementById("higherSecondaryBtn").addEventListener("click", handleClassButtonClick);
+    document.getElementById("teamEventBtn").addEventListener("click", handleClassButtonClick);
+
+
+    if (!localStorage.getItem("chosenClass")) {
+      document.getElementById("form").style.display = "none";
+
+      console.log("hidden")
+    } else {
+      document.getElementById(localStorage.getItem("Id")).classList.add("active");
+      document.getElementById("form").style.display = "block";
+      console.log("cat selected")
+    }
+
+    // Function to handle the form submission and save data to Firestore
+    function saveToFirestore() {
+      const name = document.getElementById("name").value;
+      const school = document.getElementById("school").value;
+      const classs = document.getElementById("class").value;
+      const number = document.getElementById("number").value;
+      const email = document.getElementById("email").value;
+      const event1 = document.getElementById("event1").checked;
+      const event2 = document.getElementById("event2").checked;
+      const event3 = document.getElementById("event3").checked;
+      const category = localStorage.getItem('chosenClass')
+      // Create an object with the data to be saved in Firestore
+      const events = [];
+      if (event1) events.push("Event 1");
+      if (event2) events.push("Event 2");
+      if (event3) events.push("Event 3");
+
+      // Create an object with the data to be saved in Firestore, including the "Events" field
+      const registrationData = {
+        name,
+        school,
+        classs,
+        number,
+        email,
+        event1,
+        event2,
+        event3,
+        category,
+        events, // Add the "Events" field to the data object
+      };
+
+      // Save the data to Firestore
+      db.add(registrationData)
+        .then((docRef) => {
+
+          // After successful submission, execute the code you want
+          localStorage.setItem('signed', 'yes');
+
+          modal.classList.remove("hidden");
+          overlay.classList.remove("hidden");
+          setTimeout(function () {
+            location.reload()
+
+          }, 3000)
+          toggleFormAndRegVisibility(true);
+
+          console.log('signed');
+        })
+        .catch((error) => {
+          console.error("Error adding document: ", error);
+          // Optionally, display an error message to the user.
+        });
+    }
+
+    //Input validation 
+    // Function to check if all required fields are filled correctly
+    function checkFormValidity() {
+      const name = document.getElementById("name").value;
+      const school = document.getElementById("school").value;
+      const classs = document.getElementById("class").value;
+      const number = document.getElementById("number").value;
+      const email = document.getElementById("email").value;
+
+      // Validate Class field
+      const isValidClass = /^\d{1,2}$/.test(classs);
+
+      // Validate Roll field
+
+      // Check if all required fields are filled with valid data
+      const allFieldsFilled = name && school && classs && number && email && isValidClass
+      const isValidEmail = /\S+@\S+\.\S+/.test(email); // Simple email validation
+
+      // Enable or disable the button based on the form validity
+      const sendButton = document.getElementById("sendButton");
+      sendButton.disabled = !(allFieldsFilled && isValidEmail);
+    }
+
+    // Add event listeners to form inputs for form validation
+    const formInputs = document.querySelectorAll("#contact input");
+    formInputs.forEach((input) => {
+      input.addEventListener("input", checkFormValidity);
+    });
+
+    function toggleFormAndRegVisibility(signed) {
+      const formElement = document.getElementById("form");
+      const regElement = document.getElementById("reg");
+
+      if (signed) {
+        document.getElementById("classButtons").style.display = "none";
+
+        formElement.style.display = "none"; // Hide the form
+        regElement.style.display = "block"; // Show the registration success content
+      } else {
+        console.log("fresh")
+      }
+    }
+
+    // Check if "signed" key is set in localStorage
+    const isSigned = localStorage.getItem("signed");
+    if (isSigned === "yes") {
+      // If "signed" is set, show the registration success content
+      toggleFormAndRegVisibility(true);
+    } else {
+      // If "signed" is not set, show the form
+      toggleFormAndRegVisibility(false);
+    }
+    //checkbox check
+    function handleCheckboxChange() {
+      const event1 = document.getElementById("event1").checked;
+      const event2 = document.getElementById("event2").checked;
+      const event3 = document.getElementById("event3").checked;
+
+      // Enable the "send" button if at least one checkbox is checked
+      const sendButton = document.getElementById("sendButton");
+      sendButton.disabled = !(event1 || event2 || event3);
+    }
+
+    // Add event listeners to the checkboxes
+    document.getElementById("event1").addEventListener("change", handleCheckboxChange);
+    document.getElementById("event2").addEventListener("change", handleCheckboxChange);
+    document.getElementById("event3").addEventListener("change", handleCheckboxChange);
+
+
+    // Add event listener to the "send" button
+    document.getElementById("sendButton").addEventListener("click", saveToFirestore)
+
+    // Now you can use Firebase services in your application
+    // For example, you can use firebase.auth() for authentication
+    // or firebase.firestore() for the Firestore database.
+    var typing = new Typed("#text", {
+      strings: ["Josephite Math Mania", "Let Infinity be your limit", "Compete at the greatest math fest ", "JMM 23", "Josephite Math Mania"],
+      typeSpeed: 60,
+      backSpeed: 40,
+    });
+  </script>
+</body>
+
+</html>
